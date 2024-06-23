@@ -1,4 +1,4 @@
-FROM oven/bun:alpine AS bun
+FROM oven/bun:alpine
 
 # We create a user and a group to run our application as. This is a security best
 # practice to avoid running applications as root. The user and group are created
@@ -8,8 +8,9 @@ RUN addgroup app && adduser -S -G app frontend
 USER frontend
 
 WORKDIR /frontend
-COPY ./frontend/package*.json ./ 
-COPY ./frontend/*.config.*s ./
+COPY package*.json ./ 
+COPY *.config.*s ./
+
 # It turns out the frontend address is needed as compose.yaml is outside of the frontend directory. Thats where the docker file seems to be going?
 
 # Change ownership of all files in the working directory to the "frontend" user from "app" group.
@@ -25,6 +26,6 @@ RUN bun install
 
 COPY . .
 
-EXPOSE 5173:5173
+EXPOSE 5173
 
 CMD bun run dev
