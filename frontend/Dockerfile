@@ -11,7 +11,7 @@ WORKDIR /frontend
 COPY package*.json ./ 
 COPY *.config.*s ./
 
-# It turns out the frontend address is needed as compose.yaml is outside of the frontend directory. Thats where the docker file seems to be going?
+# This only happens if you pass the dockerfile to compose.yaml under build - It turns out the frontend address is needed as compose.yaml is outside of the frontend directory. Thats where the docker file seems to be going?
 
 # Change ownership of all files in the working directory to the "frontend" user from "app" group.
 # This is necessary because the "bun" user is running the build process and its UID/GID
