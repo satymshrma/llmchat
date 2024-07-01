@@ -5,7 +5,8 @@ export const navLinks = [
     },
     {
         href: "/chat",
-        title: "Login"
+        title: "Chat"
     }
 
 ]
+

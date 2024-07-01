@@ -4,6 +4,6 @@
 
 @layer base {
     img{
-        @apply invert hue-rotate-180
+        @apply hue-rotate-[0deg]
     }
 }
