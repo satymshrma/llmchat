@@ -10,7 +10,7 @@ const App = () => {
     <main className={`flex justify-between items-center bg-white h-full w-full flex-col ${darkMode ?`hue-rotate-180 invert`:''}`}>
 
       {/* Navigation bar */}
-      <nav className="w-full sticky fixed top-0"><Nav darkMode={darkMode} changeDarkMode={() => setdarkMode(!darkMode)} /></nav>
+      <nav className="w-full fixed top-0"><Nav darkMode={darkMode} changeDarkMode={() => setdarkMode(!darkMode)} /></nav>
 
       {/* Main Section */}
       <section id='focus' className='p-2 border w-full h-svh container flex justify-center items-center border-slate-gray mt-4 mx-2'>
