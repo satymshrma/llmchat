@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
-import { About } from "./pages";
+import { About, Chat } from "./pages";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [darkMode, setdarkMode] = useState<boolean>(false); // #TODO: Redo this
@@ -26,16 +27,25 @@ const App = () => {
         {/* Main Section */}
         <section
           id="focus"
-          className="p-2 border-8 w-full h-full rounded-md flex  justify-center items-center border-slate-gray mt-4 mx-2"
+          className="border-8 max-lg:w-[98%] w-full h-full rounded-md flex justify-center items-center border-slate-gray mt-4"
         >
-          <About />
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/chat" element={<Chat />} />
+          </Routes>
+          {/* <About /> */}
         </section>
 
         <footer className="w-full">
           <div className="p-2 mt-1 mx-2 flex justify-between text-gray-500 text-xs font-mono">
             <p>© 2024 LLMchat. All rights reserved.</p>
-            <button className="hover:underlinehover:text-blue-500">
-              Feedback
+            <button
+              onClick={() => {}}
+              className="hover:underline hover:text-blue-100"
+            >
+              <p>
+                <a href="https://forms.gle/76ekqM5SkwPSEA566">Feedback</a>
+              </p>
             </button>
           </div>
         </footer>

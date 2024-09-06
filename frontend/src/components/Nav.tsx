@@ -12,7 +12,7 @@ type Props = {
 
 const Nav: React.FC<Props> = ({ darkMode, changeDarkMode, loginStatus }) => {
   return (
-    <div className="flex font-sans flex-row justify-between items-center px-4 max-sm:px-2 py-2 mx-2 font-bold border-2 border-t-0 border-gray-400 bg-black text-gray-200 rounded-lg rounded-t-none">
+    <div className="flex font-mono flex-row justify-between items-center px-4 max-sm:px-2 py-2 mx-2 font-bold border-2 border-t-0 border-gray-400 bg-black text-gray-200 rounded-lg rounded-t-none">
       <div className="flex flex-row gap-3">
         {/* Logo */}
         <div className="gap-3">
@@ -39,7 +39,7 @@ const Nav: React.FC<Props> = ({ darkMode, changeDarkMode, loginStatus }) => {
 
       <div>
         {/*Navigation links and Menu*/}
-        <div className="max-sm:hidden flex-row flex justify-evenly items-center">
+        <div className=" flex-row flex justify-evenly items-center">
           <div className="border p-1 px-2 border-slate-400 rounded">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} className="mx-2">
@@ -47,12 +47,12 @@ const Nav: React.FC<Props> = ({ darkMode, changeDarkMode, loginStatus }) => {
               </a>
             ))}
           </div>
-          <div className="mx-4 bg-blue-400 p-1 px-2 rounded">
+          <div className=" hidden mx-4 bg-blue-400 p-1 px-2 rounded">
             {!loginStatus && <a href="/login">Login</a>}
             {loginStatus && <UserMenu />}
           </div>
         </div>
-        <img className="max-sm:block hidden" src="{hamburgerIcon}" alt="Menu" />
+        <img className=" hidden" src="{hamburgerIcon}" alt="Menu" />
       </div>
     </div>
   );
