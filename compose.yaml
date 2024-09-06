@@ -1,10 +1,34 @@
 services:
+  backend:
+    build:
+      context: ./backend
+      # no_cache: true
+    ports:
+      - 3000:3000
+    networks:
+      - mainNetwork
+
+    develop:
+      watch:
+        - path: ./backend/package.json
+          action: rebuild
+        # - path: ./backend/Dockerfile
+        #   action: rebuild
+        - path: ./backend/package-lock.json
+          action: rebuild
+        - path: ./backend/
+          target: /backend/
+          action: rebuild
   frontend:
     build:
       context: ./frontend
       # no_cache: true
+    depends_on:
+      - backend
     ports:
       - 5173:5173
+    networks:
+      - mainNetwork
 
     develop:
       watch:
@@ -17,3 +41,6 @@ services:
         - path: ./frontend/
           target: /frontend/
           action: sync
+
+networks:
+  mainNetwork:
