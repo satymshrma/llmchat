@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <main
-        className={`flex justify-between items-center bg-black text-white h-screen w-screen flex-col ${
+        className={`flex font-mono justify-between items-center bg-black text-white h-full min-h-screen w-full min-w-screen flex-col ${
           darkMode ? `hue-rotate-180 invert` : ""
         }`}
       >
@@ -27,18 +27,19 @@ const App = () => {
         {/* Main Section */}
         <section
           id="focus"
-          className="border-8 max-lg:w-[98%] w-full h-full rounded-md flex justify-center items-center border-slate-gray mt-4"
+          className="border-4 border-gray-600 max-w-[98%] w-full rounded-md flex flex-1 justify-stretch items-stretch mt-4"
         >
-          <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/chat" element={<Chat />} />
-          </Routes>
-          {/* <About /> */}
+          <div className="min-w-full min-h-full">
+            <Routes>
+              <Route path="/" element={<About />} />
+              <Route path="/chat" element={<Chat />} />
+            </Routes>
+          </div>
         </section>
 
-        <footer className="w-full">
-          <div className="p-2 mt-1 mx-2 flex justify-between text-gray-500 text-xs font-mono">
-            <p>© 2024 LLMchat. All rights reserved.</p>
+        <footer className="w-full h-fit">
+          <div className="p-2 mt-1 mx-2 flex justify-between text-gray-500 text-xs">
+            <p>LLMchat by Satyam Sharma</p>
             <button
               onClick={() => {}}
               className="hover:underline hover:text-blue-100"
