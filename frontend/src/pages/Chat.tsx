@@ -1,23 +1,26 @@
 import ChatWindow from "../components/ChatWindow";
+import IndividualChats from "../components/IndividualChats";
+import Settings from "../components/Settings";
 
 const Chat = () => {
   return (
     <>
       <div className="flex w-full h-full">
         <aside className="border-r-slate-800 flex flex-col items-start border-r-2 border-dotted max-sm:hidden w-1/5">
-          <div className="pb-4 px-3 mt-4  text-xl w-full h-fit border-b-2 border-gray-800">
-            Chats
+          <div className="pb-4 flex justify-between px-3 mt-4  text-xl w-full h-fit border-b-2 border-gray-800">
+            <p>Chats</p>
+            <button className="w-fit h-fit px-2 rounded-sm bg-blue-400">
+              +
+            </button>
           </div>
-          <div className="p-2 h-full">
-            <p>individchats</p>
+          <div className="p-2 h-full max-w-full">
+            <IndividualChats />
           </div>
           <div
             id="settings"
             className="border-t-2 border-gray-800 w-full flex justify-center"
           >
-            <button className="bg-cyan-600 w-fit h-fit rounded-sm text-white p-1 m-4">
-              Settings
-            </button>
+            <Settings />
           </div>
         </aside>
 

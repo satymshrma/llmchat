@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
 import { About, Chat } from "./pages";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [darkMode, setdarkMode] = useState<boolean>(false); // #TODO: Redo this
@@ -30,10 +30,12 @@ const App = () => {
           className="border-4 border-gray-600 max-w-[98%] w-full rounded-md flex flex-1 justify-stretch items-stretch mt-4"
         >
           <div className="min-w-full min-h-full">
-            <Routes>
-              <Route path="/" element={<About />} />
-              <Route path="/chat" element={<Chat />} />
-            </Routes>
+            <Router>
+              <Routes>
+                <Route path="/" element={<About />} />
+                <Route path="/chat" element={<Chat />} />
+              </Routes>
+            </Router>
           </div>
         </section>
 
