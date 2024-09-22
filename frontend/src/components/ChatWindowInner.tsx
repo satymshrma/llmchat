@@ -10,11 +10,12 @@ interface ChatWindowProps {
 }
 
 const ChatWindowInner = ({ llmChatData }: ChatWindowProps) => {
+  let id = 0;
   return (
     <>
       <div className="flex flex-col">
         {llmChatData.map(({ sender, body }) => (
-          <MessageBubble sender={sender} body={body} />
+          <MessageBubble key={id++} sender={sender} body={body} />
         ))}
       </div>
     </>
