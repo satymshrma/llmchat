@@ -1,4 +1,4 @@
-# LLMChat (WIP)
+# LLMChat
 
 A chat frontend for the LLM APIs.
 
