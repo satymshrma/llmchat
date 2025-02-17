@@ -13,7 +13,7 @@ const ChatWindowInner = ({ llmChatData }: ChatWindowProps) => {
   let id = 0;
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-y-scroll">
         {llmChatData.map(({ sender, body }) => (
           <MessageBubble key={id++} sender={sender} body={body} />
         ))}
